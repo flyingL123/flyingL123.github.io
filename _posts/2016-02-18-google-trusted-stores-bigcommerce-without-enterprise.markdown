@@ -55,7 +55,7 @@ between each `<span>` tag that are meant to be replaced with the appropriate val
 ~~~
 
 In an ideal world, Bigcommerce would expose all of the order details through variables on the page. This would allow developers
-write some javascript to loop through the order and construct the required HTML based on the order details. Unfortunately, Bigcommerce does not
+to write some javascript code to loop through the order and construct the required HTML based on the order details. Unfortunately, Bigcommerce does not
 expose most of these variables on the confirmation page unless you are an enterprise client. However, if you're determined,
 there is a workaround.
 
@@ -122,6 +122,15 @@ Here's what the view looks like:
 The code samples above are using PHP and Laravel, but the concepts apply to any language and framework. This strategy has been working
 for our store for over a year now. We're able to avoid paying Bigcommerce for an enterprise account, but still successfully integrate Google Trusted Stores.
 
-Please note that this strategy will increase the page load time for your confirmation page. However, this is a tradeoff we are willing to live with.
+## Additional Notes
+
+* This strategy will increase the page load time for your confirmation page. However, this is a tradeoff we are willing to live with.
 A customer has reached the order confirmation page because they've already made a purchase. At this point in the customer experience
-we are willing to live with a few extra milliseconds of page load time in order to integrate Google Trusted Stores.
+we are willing to accept a few extra milliseconds of page load time in order to integrate Google Trusted Stores.
+
+* Bigcommerce has recently rolled out a new theme engine called [Stencil](https://stencil.bigcommerce.com/). I haven't looked into this
+new system much yet, but it appears that it might be more flexible as far as what variables are available to developers on each page.
+Hopefully this includes the order-specific variables needed to integrate Google Trusted Stores. If that is the case, this workaround will
+no longer be necessary.
+
+
