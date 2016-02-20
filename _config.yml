@@ -8,6 +8,7 @@ paginate: 15
 baseurl: /
 domain_name: 'http://www.thewebiknow.com'
 gems: [jekyll-paginate]
+permalink: none
 
 # Details for the RSS feed generator
 url:            'http://www.thewebiknow.com'
